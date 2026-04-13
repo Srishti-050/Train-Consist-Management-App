@@ -1,43 +1,29 @@
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TrainConsistManagementapp {
 
     public static void main(String[] args) {
 
         System.out.println("===================================");
-        System.out.println("UC4 - Maintain Ordered Bogie Consist");
+        System.out.println("UC6 - Map Bogie to Capacity");
         System.out.println("===================================");
 
-        // Create LinkedList
-        List<String> trainConsist = new LinkedList<String>();
+        // Create HashMap (Bogie → Capacity)
+        Map<String, Integer> capacityMap = new HashMap<String, Integer>();
 
-        // Add bogies
-        trainConsist.add("Engine");
-        trainConsist.add("Sleeper");
-        trainConsist.add("AC");
-        trainConsist.add("Cargo");
-        trainConsist.add("Guard");
+        // Add bogie capacities
+        capacityMap.put("Sleeper", 72);
+        capacityMap.put("AC Chair", 60);
+        capacityMap.put("First Class", 40);
 
-        System.out.println("\nInitial Train Consist:");
-        System.out.println(trainConsist);
+        // Display all bogies with capacity
+        System.out.println("\nBogie Capacity Details:");
 
-        // Insert Pantry Car at position 2
-        trainConsist.add(2, "Pantry Car");
+        for (Map.Entry<String, Integer> entry : capacityMap.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
 
-        System.out.println("\nAfter Adding Pantry Car at position 2:");
-        System.out.println(trainConsist);
-
-        // Remove first and last bogie
-        trainConsist.remove(0); // remove Engine
-        trainConsist.remove(trainConsist.size() - 1); // remove Guard
-
-        System.out.println("\nAfter Removing First and Last Bogie:");
-        System.out.println(trainConsist);
-
-        System.out.println("\nFinal Ordered Train Consist:");
-        System.out.println(trainConsist);
-
-        System.out.println("\nUC4 operations completed successfully...");
+        System.out.println("\nUC6 operations completed successfully...");
     }
 }
