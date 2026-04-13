@@ -1,27 +1,20 @@
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TrainConsistManagementapp {
 
     public static void main(String[] args) {
 
-        // Create LinkedHashSet to maintain insertion order and uniqueness
-        Set<String> trainFormation = new LinkedHashSet<>();
+        // Welcome message
+        System.out.println("=== Train Consist Management App ===");
 
-        // Adding bogies
-        trainFormation.add("Engine");
-        trainFormation.add("Sleeper");
-        trainFormation.add("Cargo");
-        trainFormation.add("Guard");
+        // Initialize empty train consist (list of bogies)
+        List<String> trainConsist = new ArrayList<String>();
 
-        // Attempting to add duplicate bogie
-        trainFormation.add("Sleeper");
+        // Display initial bogie count
+        System.out.println("Initial number of bogies: " + trainConsist.size());
 
-        // Display final train formation
-        System.out.println("Final Train Formation:");
-
-        for (String bogie : trainFormation) {
-            System.out.println(bogie);
-        }
+        // Program continues...
+        System.out.println("Train consist initialized successfully.");
     }
 }
